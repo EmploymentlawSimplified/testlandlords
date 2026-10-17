@@ -1,0 +1,364 @@
+/* ================================================
+   REFERRAL FORM STYLES
+   The New Start Project Community CIC
+   Extends style.css — uses the same design tokens
+   ================================================ */
+
+.rf-shell {
+  background: var(--warm-bg);
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.rf-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* ---- PROGRESS ---- */
+
+.rf-progress {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.rf-dot {
+  width: 28px; height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 600;
+  background: var(--warm-card);
+  color: var(--text-light);
+  border: 2px solid var(--border);
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.rf-dot.is-done {
+  background: var(--teal); color: var(--white);
+  border-color: var(--teal); cursor: pointer;
+}
+
+.rf-dot.is-active {
+  background: var(--navy); color: var(--white);
+  border-color: var(--navy); cursor: pointer;
+}
+
+.rf-line {
+  flex: 1; height: 2px; min-width: 8px;
+  background: var(--border);
+}
+.rf-line.is-done { background: var(--teal); }
+
+/* ---- CARD ---- */
+
+.rf-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.rf-step-label {
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.6rem;
+}
+
+.rf-card h2 {
+  font-size: 1.35rem; color: var(--navy);
+  margin: 0 0 0.3rem;
+}
+
+.rf-desc {
+  font-size: 0.9rem; color: var(--text-light);
+  margin: 0 0 1.5rem; line-height: 1.6;
+}
+
+/* ---- FIELDS ---- */
+
+.rf-field { margin-bottom: 1.1rem; }
+
+.rf-field > label {
+  display: block;
+  font-size: 0.88rem; font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.rf-req { color: #AB091E; margin-left: 0.15rem; }
+
+.rf-field input,
+.rf-field textarea,
+.rf-field select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: var(--white);
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+
+.rf-field input:focus,
+.rf-field textarea:focus,
+.rf-field select:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(43,122,120,0.12);
+}
+
+.rf-field textarea { min-height: 96px; resize: vertical; }
+
+.rf-field.has-error input,
+.rf-field.has-error textarea,
+.rf-field.has-error select { border-color: #AB091E; }
+
+.rf-error {
+  display: none;
+  font-size: 0.8rem; color: #AB091E;
+  margin-top: 0.3rem; font-weight: 500;
+}
+.rf-field.has-error .rf-error { display: block; }
+
+/* ---- CHOICE PILLS ---- */
+
+.rf-choices {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-top: 0.15rem;
+}
+
+.rf-pill {
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--warm-bg);
+  color: var(--text-secondary);
+  font-size: 0.85rem; font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.rf-pill:hover { border-color: var(--teal-light); }
+
+.rf-pill.is-on {
+  background: var(--navy); color: var(--white);
+  border-color: var(--navy); font-weight: 600;
+}
+
+.rf-pill.is-on[data-value="Yes"] {
+  background: #E6F6F4; color: var(--navy); border-color: var(--teal);
+}
+.rf-pill.is-on[data-value="Unsure"],
+.rf-pill.is-on[data-value="Unknown"] {
+  background: #FFF3E0; color: #8A4B0C; border-color: #CB6E17;
+}
+
+.rf-check.is-on {
+  background: #E6F6F4; color: var(--navy);
+  border-color: var(--teal); font-weight: 600;
+}
+
+/* ---- CONDITIONAL / NOTICE BLOCKS ---- */
+
+.rf-conditional {
+  background: var(--warm-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.1rem 0.3rem;
+  margin: 0.75rem 0 1.1rem;
+}
+
+.rf-note {
+  background: #E6F6F4;
+  border: 1px solid rgba(43,122,120,0.25);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem; color: var(--navy);
+  line-height: 1.6; margin-bottom: 1.1rem;
+}
+
+.rf-flag {
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem; font-weight: 600;
+  margin-top: 0.6rem; line-height: 1.5;
+}
+.rf-flag.is-warning {
+  background: #FFF3E0; color: #8A4B0C;
+  border: 1px solid rgba(203,110,23,0.3);
+}
+.rf-flag.is-urgent {
+  background: #FFF0F0; color: #AB091E;
+  border: 1px solid rgba(171,9,30,0.3);
+}
+
+/* ---- SKILLS GRID ---- */
+
+.rf-skill-row {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.rf-skill-row:last-child { border-bottom: none; }
+
+.rf-skill-name {
+  flex: 1; font-size: 0.88rem; font-weight: 500;
+}
+
+.rf-skill-row select {
+  width: auto; min-width: 175px;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.82rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  background: var(--white);
+}
+
+/* ---- REVIEW ---- */
+
+.rf-review-sec { margin-bottom: 1.25rem; }
+
+.rf-review-sec h3 {
+  font-size: 0.95rem; color: var(--navy);
+  margin: 0 0 0.4rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--teal);
+}
+
+.rf-review-row {
+  display: flex; gap: 0.75rem;
+  font-size: 0.85rem; padding: 0.2rem 0;
+}
+
+.rf-review-row span:first-child {
+  color: var(--text-light); min-width: 165px; flex-shrink: 0;
+}
+
+.rf-consent {
+  background: #EBF4FA;
+  border: 1px solid rgba(38,128,194,0.25);
+  border-radius: var(--radius);
+  padding: 1.15rem;
+  margin-top: 1.5rem;
+}
+
+.rf-consent h3 {
+  font-size: 0.9rem; color: #1B5E8C;
+  margin: 0 0 0.5rem;
+}
+
+.rf-consent p {
+  font-size: 0.82rem; color: var(--text-secondary);
+  line-height: 1.65; margin: 0 0 0.9rem;
+}
+
+.rf-consent-check {
+  display: flex; align-items: flex-start; gap: 0.6rem;
+  cursor: pointer; font-size: 0.85rem; font-weight: 500;
+}
+
+.rf-consent-check input {
+  width: 18px; height: 18px; margin: 0.1rem 0 0;
+  accent-color: var(--teal); cursor: pointer; flex-shrink: 0;
+}
+
+/* ---- BUTTONS ---- */
+
+.rf-actions {
+  display: flex; justify-content: space-between;
+  gap: 0.9rem; margin-top: 1.25rem;
+}
+
+.rf-btn {
+  flex: 1;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius);
+  font-family: inherit; font-size: 0.95rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.rf-btn-primary { background: var(--navy); color: var(--white); }
+.rf-btn-primary:hover:not(:disabled) { background: var(--navy-light); }
+.rf-btn-primary:disabled { background: var(--text-light); cursor: not-allowed; opacity: 0.75; }
+
+.rf-btn-secondary {
+  background: var(--white); color: var(--text-secondary);
+  border-color: var(--border);
+}
+.rf-btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
+
+.rf-spacer { flex: 1; }
+
+/* ---- STATUS / MISC ---- */
+
+.rf-status {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  font-size: 0.88rem; font-weight: 500;
+  display: none;
+}
+.rf-status.is-error {
+  display: block;
+  background: #FFF0F0; color: #AB091E;
+  border: 1px solid rgba(171,9,30,0.3);
+}
+.rf-status.is-working {
+  display: block;
+  background: #EBF4FA; color: #1B5E8C;
+  border: 1px solid rgba(38,128,194,0.25);
+}
+
+.rf-saved {
+  font-size: 0.78rem; color: var(--text-light);
+  text-align: center; margin-top: 0.9rem;
+}
+
+.rf-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.rf-noscript {
+  background: #FFF3E0;
+  border: 1px solid rgba(203,110,23,0.35);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  color: #8A4B0C;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .rf-card { padding: 1.5rem 1.15rem; }
+  .rf-review-row { flex-direction: column; gap: 0.1rem; }
+  .rf-review-row span:first-child { min-width: 0; }
+  .rf-skill-row { flex-direction: column; align-items: stretch; gap: 0.35rem; }
+  .rf-skill-row select { width: 100%; min-width: 0; }
+}
+
+.rf-dot:disabled {
+  cursor: default;
+}
+
+.rf-dot:not(:disabled):hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}

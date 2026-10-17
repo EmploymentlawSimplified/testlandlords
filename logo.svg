@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 126" role="img" aria-label="The New Start Project">
+  <defs>
+    <!-- Inner door: warm amber, deepening toward the threshold -->
+    <linearGradient id="nspDoor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#E8A93A"/>
+      <stop offset="50%"  stop-color="#D68E20"/>
+      <stop offset="100%" stop-color="#C87517"/>
+    </linearGradient>
+    <!-- Warm halo behind the doorway -->
+    <radialGradient id="nspGlow" cx="50%" cy="56%" r="52%">
+      <stop offset="0%"   stop-color="#F0A83C" stop-opacity="0.45"/>
+      <stop offset="50%"  stop-color="#D68E20" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#D68E20" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Glow -->
+  <ellipse cx="84" cy="70" rx="70" ry="56" fill="url(#nspGlow)"/>
+
+  <!-- Dashed amber arc, passing behind the doorway -->
+  <path d="M34 104 Q84 34 134 104"
+        fill="none" stroke="#C69141" stroke-width="3"
+        stroke-linecap="round" stroke-dasharray="7 10" opacity="0.9"/>
+
+  <!-- Horizon sweep -->
+  <path d="M6 92 Q84 60 162 94"
+        fill="none" stroke="#2BA6E0" stroke-width="5.2" stroke-linecap="round"/>
+
+  <!-- Outer doorway: dark navy frame with a cyan outline -->
+  <path d="M60 101 V64 a24 24 0 0 1 48 0 V101 Z"
+        fill="#0C1B2F" stroke="#2BA6E0" stroke-width="5" stroke-linejoin="round"/>
+
+  <!-- Inner amber door, set inside the frame -->
+  <path d="M72 98 V68 a12 12 0 0 1 24 0 V98 Z" fill="url(#nspDoor)"/>
+
+  <!-- Large four-point spark, long vertical spikes, above the apex -->
+  <path d="M84 6 l4.2 20 10.5 4.6 -10.5 4.6 -4.2 20 -4.2 -20 -10.5 -4.6 10.5 -4.6 Z"
+        fill="#F0A83C"/>
+  <!-- Smaller spark, upper right -->
+  <path d="M114 15 l2.6 9.4 6.8 3 -6.8 3 -2.6 9.4 -2.6 -9.4 -6.8 -3 6.8 -3 Z"
+        fill="#E8A93A"/>
+</svg>
